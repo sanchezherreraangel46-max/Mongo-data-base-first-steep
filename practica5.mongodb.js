@@ -1,0 +1,54 @@
+db.alumnos.find({ edad: 18 });
+db.alumnos.find({ grupo: "1A" });
+db.alumnos.find({ promedio: { $gt: 9 } });
+db.alumnos.find({ promedio: { $lt: 8 } });
+db.alumnos.find({ edad: { $gte: 20 } });
+db.alumnos.find({ nombre: /^M/ });
+db.alumnos.find({ grupo: { $in: ["1A","1B"] } });
+db.alumnos.find({ promedio: { $gte: 8, $lte: 9 } });
+db.alumnos.find({ nombre: "Pablo" });
+db.alumnos.find().sort({ promedio: -1 });
+
+db.eventos.find({ tipo: "Cultural" });
+db.eventos.find({ tipo: "Academico" });
+db.eventos.find({ fecha: { $gt: "2025-04-01" } });
+db.eventos.find({ fecha: { $lt: "2025-03-01" } });
+db.eventos.find({ nombre: /^C/ });
+db.eventos.find({ tipo: { $in: ["Deportivo","General"] } });
+db.eventos.find({ nombre: /concurso/i });
+db.eventos.find().sort({ fecha: 1 });
+db.eventos.find().sort({ fecha: -1 });
+db.eventos.find({ nombre: "Robótica" });
+
+db.plantel.find({ salones: { $gt: 10 } });
+db.plantel.find({ salones: { $lt: 8 } });
+db.plantel.find({ laboratorios: 3 });
+db.plantel.find({ edificio: /^A/ });
+db.plantel.find({ laboratorios: { $gte: 2 } });
+db.plantel.find().limit(5);
+db.plantel.find().sort({ salones: -1 });
+db.plantel.find().sort({ laboratorios: 1 });
+db.plantel.find({ edificio: { $in: ["C","D","E"] } });
+db.plantel.find({ salones: { $gte: 10, $lte: 15 } });
+
+db.escuela.find({ tipo: "Pública" });
+db.escuela.find({ tipo: "Privada" });
+db.escuela.find({ ciudad: "México" });
+db.escuela.find({ ciudad: /^M/ });
+db.escuela.find({ nombre: /CBTIS/ });
+db.escuela.find({ nombre: /^C/ });
+db.escuela.find().sort({ ciudad: 1 });
+db.escuela.find().sort({ nombre: -1 });
+db.escuela.find({ ciudad: { $in: ["Puebla","León"] } });
+db.escuela.find({ tipo: "Pública", ciudad: "Toluca" });
+
+db.profesores.find({ materia: "Matemáticas" });
+db.profesores.find({ antiguedad: { $gt: 5 } });
+db.profesores.find({ antiguedad: { $lt: 3 } });
+db.profesores.find({ nombre: /^L/ });
+db.profesores.find({ materia: /i/ });
+db.profesores.find().sort({ antiguedad: -1 });
+db.profesores.find().sort({ nombre: 1 });
+db.profesores.find({ materia: { $in: ["Física","Química"] } });
+db.profesores.find({ antiguedad: { $gte: 4, $lte: 8 } });
+db.profesores.find({ nombre: "Ricardo" });
